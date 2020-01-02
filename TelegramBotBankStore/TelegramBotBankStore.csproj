@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{202DF073-CE30-4730-B07C-64BB5171DA15}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TelegramBotBankStore</RootNamespace>
+    <AssemblyName>TelegramBotBankStore</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>TelegramBotBankStore.ico</ApplicationIcon>
+    <StartupObject>TelegramBotBankStore.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BlockchainAPI">
+      <HintPath>..\..\..\Release\main\BlockchainAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonWrapper">
+      <HintPath>..\..\..\Release\main\CommonWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\Release\main\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="FlatUI">
+      <HintPath>..\..\..\Release\main\FlatUI.dll</HintPath>
+    </Reference>
+    <Reference Include="LibraryUsersAutorize">
+      <HintPath>..\..\..\Release\main\LibraryUsersAutorize.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\Release\main\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\Release\main\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="QiwiApi">
+      <HintPath>..\..\..\Release\main\QiwiApi.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telegram.Bot">
+      <HintPath>..\..\..\Release\main\Telegram.Bot.dll</HintPath>
+    </Reference>
+    <Reference Include="Yandex.Money.Api.Sdk">
+      <HintPath>..\..\..\Release\main\Yandex.Money.Api.Sdk.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Apirone.cs" />
+    <Compile Include="AuthorizationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthorizationDialog.Designer.cs">
+      <DependentUpon>AuthorizationDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authorization\AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authorization\AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authorization\UsersPermission\Forms\FormChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authorization\UsersPermission\Forms\FormChangePassword.Designer.cs">
+      <DependentUpon>FormChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authorization\UsersPermission\Forms\FormListUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authorization\UsersPermission\Forms\FormListUsers.Designer.cs">
+      <DependentUpon>FormListUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CurrencyBot.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="Domain\Category.cs" />
+    <Compile Include="Domain\DbContext\BotContext.cs" />
+    <Compile Include="Domain\HistoryType.cs" />
+    <Compile Include="Domain\PayCurrency.cs" />
+    <Compile Include="Domain\Policy.cs" />
+    <Compile Include="Domain\Product.cs" />
+    <Compile Include="Domain\ProductStatus.cs" />
+    <Compile Include="Domain\PromoCode.cs" />
+    <Compile Include="Domain\PromoCodeEnum.cs" />
+    <Compile Include="Domain\Review.cs" />
+    <Compile Include="Domain\TelegramPage.cs" />
+    <Compile Include="Domain\Transaction.cs" />
+    <Compile Include="Domain\TransactionType.cs" />
+    <Compile Include="Domain\User.cs" />
+    <Compile Include="Domain\UserWalletHistory.cs" />
+    <Compile Include="EditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProduct.Designer.cs">
+      <DependentUpon>EditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmptyDel.cs" />
+    <Compile Include="ExmoApi.cs" />
+    <Compile Include="FormEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditUser.Designer.cs">
+      <DependentUpon>FormEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMessage.Designer.cs">
+      <DependentUpon>FormMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTransactions.Designer.cs">
+      <DependentUpon>FormTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="Key.cs" />
+    <Compile Include="Languages\Language.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Meta.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MyQiwi.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="QiwiPayType.cs" />
+    <Compile Include="Serializer.cs" />
+    <Compile Include="Singleton.cs" />
+    <Compile Include="Sum.cs" />
+    <Compile Include="Tele2Api.cs" />
+    <Compile Include="Tele2History.cs" />
+    <Compile Include="YandexMoney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YandexMoney.Designer.cs">
+      <DependentUpon>YandexMoney.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AuthorizationDialog.resources" />
+    <EmbeddedResource Include="EditProduct.resources" />
+    <EmbeddedResource Include="FormEditUser.resources" />
+    <EmbeddedResource Include="FormMessage.resources" />
+    <EmbeddedResource Include="FormTransactions.resources" />
+    <EmbeddedResource Include="Languages\Language.resources" />
+    <EmbeddedResource Include="Main.resources" />
+    <EmbeddedResource Include="Properties\Resources.resources" />
+    <EmbeddedResource Include="YandexMoney.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
